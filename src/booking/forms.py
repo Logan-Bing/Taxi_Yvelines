@@ -16,12 +16,18 @@ class ContactForm(forms.Form):
     starting_address = forms.CharField(
         max_length=255,
         label="Adresse de départ",
-        widget=forms.TextInput(attrs={'id': 'autocomplete', "placeholder": "699 avenue aristide briand"})
+        widget=forms.TextInput(attrs={
+            "id":"start",
+            "placeholder": "699 avenue aristide briand",
+            "autocomplete": "address-line1"})
     )
     arrival_address = forms.CharField(
         max_length=255,
         label="Adresse d'arrivé",
-        widget=forms.TextInput(attrs={'id': 'autocomplete', "placeholder": "5 place de la liberté"})
+        widget=forms.TextInput(attrs={
+            'id': 'end',
+            "placeholder": "5 place de la liberté",
+            "autocomplete": "address-line1",})
     )
     date = forms.DateField(
         label="Date de la course",

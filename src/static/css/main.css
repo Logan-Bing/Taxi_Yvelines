@@ -1,0 +1,17 @@
+body{
+  margin: 0;
+  padding: 0;
+}
+
+.header-contact h2{
+  text-align: center;
+}
+
+.main-contact{
+  display: flex;
+}
+
+#map{
+  width: 724px;
+  height: 586px;
+}
