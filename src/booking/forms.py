@@ -1,5 +1,4 @@
 from django import forms
-from django.views.generic import TemplateView
 
 
 class ContactForm(forms.Form):
@@ -12,14 +11,18 @@ class ContactForm(forms.Form):
     phone_number = forms.CharField(
                         max_length=10,
                         label="Numéro de téléphone",
-                        widget=forms.TextInput(attrs={"placeholder": "0101010101"}))
+                        widget=forms.TextInput(attrs={"placeholder": "0101010101",}))
+    email = forms.EmailField(
+        widget=forms.TextInput(attrs={"placeholder": "Your e-mail"})
+    )
     starting_address = forms.CharField(
         max_length=255,
         label="Adresse de départ",
         widget=forms.TextInput(attrs={
             "id":"start",
             "placeholder": "699 avenue aristide briand",
-            "autocomplete": "address-line1"})
+            "autocomplete": "street-address"
+            })
     )
     arrival_address = forms.CharField(
         max_length=255,
@@ -27,7 +30,8 @@ class ContactForm(forms.Form):
         widget=forms.TextInput(attrs={
             'id': 'end',
             "placeholder": "5 place de la liberté",
-            "autocomplete": "address-line1",})
+            "autocomplete": "street-address"
+        })
     )
     date = forms.DateField(
         label="Date de la course",
@@ -45,9 +49,6 @@ class ContactForm(forms.Form):
             },
             format='%H:%M'
         )
-    )
-    email = forms.EmailField(
-        widget=forms.TextInput(attrs={"placeholder": "Your e-mail"})
     )
     message = forms.CharField(
         widget=forms.Textarea(attrs={"placeholder": "Your message"})

@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     "anymail",
+    "formtools",
+    "crispy_forms",
 ]
 
 ANYMAIL = {

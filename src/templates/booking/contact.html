@@ -1,41 +1,102 @@
+{% extends "core/base.html" %}
 {% load static %}
 
-<html>
 
-<head>
-  <meta charset="utf-8">
-  <title>Mapbox GL JS map</title>
-  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
-
+{% block head %}
   <link href="https://api.mapbox.com/mapbox-gl-js/v3.12.0/mapbox-gl.css" rel="stylesheet" />
-  <link rel="stylesheet" href="{% static "css/main.css" %}">
 
   <script src="https://api.mapbox.com/mapbox-gl-js/v3.12.0/mapbox-gl.js"></script>
   <script id="search-js" defer src="https://api.mapbox.com/search-js/v1.0.0/web.js"></script>
-</head>
+{% endblock %}
 
-<body>
+{% block content %}
 
   <div class="header-contact">
-    <h2>Réserver votre course</h2>
+    <div class="bar left"></div>
+    <h2 class="section-title">Réserver votre course</h2>
+    <div class="bar right"></div>
   </div>
+
   <div class="main-contact">
     <div id="map"></div>
-    <div>
-      <form method="post" action="">
-        {% csrf_token %}
-        {{ form }}
-        <div class="form-actions">
-          <button type="submit">Send</button>
+    <div class="main-form">
+      <div class="header-form">
+        <h3 class="subtitle">Informations Trajet</h3>
+        <p class="infos">Indiquez simplement l'adresse de départ, l'heure<br> souhaitée et votre destination. Je m'occupe du reste !</p>
+      </div>
+      <div class="timeline">
+        <div class="step-container">
+          <div class="step-icon" id="first-icon">
+            <img src="{% static 'images/group.png' %}" alt="">
+          </div>
+          <span class="step" >Etape 1</span>
+          <span class="step-detail">Identité</span>
         </div>
-      </form>
+        <div class="line"></div>
+        <div class="step-container">
+          <div class="step-icon">
+            <img src="{% static 'images/second.png' %}" alt="">
+          </div>
+          <span class="step">Etape 2</span>
+          <span class="step-detail">Trajet</span>
+        </div>
+        <div class="line"></div>
+        <div class="step-container">
+          <div class="step-icon">
+            <img src="{% static 'images/third.png' %}" alt="">
+          </div>
+          <span class="step">Etape 3</span>
+          <span class="step-detail">Dates</span>
+        </div>
+      </div>
+      <div class="form">
+        <form method="post" class="form-container">
+          {% csrf_token %}
+          <div class="first-form form-step">
+            <div>
+              <input type="text" id="first_name" name="first_name" placeholder="Jhon" maxlength="100" required>
+            </div>
+            <div>
+              <input type="text" id="surname" name="surname" placeholder="Doe" maxlength="100" required>
+            </div>
+            <div>
+              <input type="text" id="phone_number" name="phone_number" placeholder="0101010101" maxlength="10" required>
+            </div>
+            <div>
+              <input type="email" id="email" name="email" placeholder="Your e-mail" required>
+            </div>
+          </div>
+          <div class="second-form form-step">
+            <div>
+              <input type="text" id="start" name="starting_address" placeholder="699 avenue aristide briand" autocomplete="street-address" required>
+            </div>
+            <div>
+              <input type="text" id="end" name="arrival_address" placeholder="5 place de la liberté" autocomplete="street-address" required>
+            </div>
+          </div>
+          <div class="third-form form-step">
+            <div>
+              <input type="date" id="date" name="date" required>
+            </div>
+            <div>
+              <input type="time" id="hour" name="hour" placeholder="hh:mm" required>
+            </div>
+            <div>
+              <textarea id="message" name="message" placeholder="Your message" rows="4"></textarea>
+            </div>
+          </div>
+
+          <button class="next-button" onclick="nextStep()">Suivant</button>
+          <input class="submit-button" type="submit" value="Envoyer">
+        </form>
+      </div>
     </div>
+
   </div>
 
-  <div id="duration-display" style="margin-top: 10px;"></div>
+  <div class="duration-container"></div>
 
-  <script src="{% static "js/script.js" %}"></script>
+  <script src="{% static "js/mapconfig.js" %}"></script>
+  <script src="{% static "js/form_wizard.js" %}"></script>
 
-</body>
-
-</html>
+{% endblock %}
