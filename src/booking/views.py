@@ -1,9 +1,10 @@
-from django.http import HttpResponseRedirect
 from django.conf import settings
 from django.shortcuts import render
 from django.core.mail import send_mail
 
-from .forms import ContactForm
+def test_hero(request):
+     return render(request, "booking/hero.html")
+
 
 def get_success(request):
     return render(request, "booking/contact_success.html")
@@ -15,13 +16,14 @@ def get_booking(request):
             first_name = request.POST.get("first_name")
             surname = request.POST.get("surname")
             phone_number = request.POST.get("phone_number")
-            starting_address = request.POST.get("starting_address")
-            arrival_address = request.POST.get("arrival_address")
+            start = request.POST.get("start") or request.POST.get("start address-search")
+            end = request.POST.get("end") or request.POST.get("end address-search")
             date = request.POST.get("date")
             hour = request.POST.get("hour")
             subject = "Vous avez reçu une nouvelle demande de course via le formulaire du site. Voici les détails du client :"
             email = request.POST.get("email")
             message = request.POST.get("message")
+            print(request.POST)
 
             full_meesage = f"""
                 {subject}
@@ -30,8 +32,8 @@ def get_booking(request):
                 📞 Téléphone : {phone_number}
                 📧 Email : {email}
 
-                📍 Adresse de départ : {starting_address}
-                📍 Adresse d’arrivée : {arrival_address}
+                📍 Adresse de départ : {start}
+                📍 Adresse d’arrivée : {end}
 
                 📅 Date : {date}
                 🕒 Heure : {hour}
@@ -52,6 +54,16 @@ def get_booking(request):
                 recipient_list=[settings.NOTIFY_EMAIL]
             )
 
-            return HttpResponseRedirect("/contact_success/")
+            return render(request, "booking/contact_success.html", {
+                 "first_name": first_name,
+                 "surname": surname,
+                 "phone_number": phone_number,
+                 "start": start,
+                 "end": end,
+                 "date": date,
+                 "hour": hour,
+                 "email": email,
+                 "messagge" : message
+            })
 
     return render(request, "booking/contact.html")

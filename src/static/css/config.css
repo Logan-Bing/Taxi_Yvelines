@@ -8,6 +8,7 @@
   --text-black: #3D3D3D;
   --text-white: #FFFFFF;
   --success-color: #009411;
+  --error-color: #FFA9A9;
   --gradient-primary: linear-gradient(90deg, #1C60FF 0%, #0D1EB8 100%);
 
   --title-font: 'Montserrat';
@@ -24,5 +25,8 @@
 
   --infos-font: 'Instrument Sans';
   --infos-size: 1rem;
-  --infos-weight: 'light':
+  --infos-weight: 'light';
+
+  --shadow-primary: 0px 8px 22px -6px rgba(24, 39, 75, 0.72),
+                    0px 14px 64px -4px rgba(24, 39, 75, 0.41);
 }

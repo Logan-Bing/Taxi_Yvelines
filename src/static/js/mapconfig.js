@@ -1,4 +1,5 @@
-const durationDiv = document.querySelector(".duration-container")
+const durationDiv = document.querySelector('.duration-container')
+const span = durationDiv.querySelector('.duration');
 
 mapboxgl.accessToken = 'pk.eyJ1IjoibG9nYW5kZXZkamFuZ28iLCJhIjoiY21iNHpzZmh2MG5oZTJwc2F3ZGNiNzJzZiJ9.2FKlWN6oDXJjSwfTMUKXYw';
 
@@ -47,10 +48,10 @@ mapboxgl.accessToken = 'pk.eyJ1IjoibG9nYW5kZXZkamFuZ28iLCJhIjoiY21iNHpzZmh2MG5oZ
       const hours = Math.floor(totalMinutes / 60);
       const minutes = totalMinutes % 60;
       if (hours == 0){
-        durationDiv.innerHTML = `<span>${minutes} min</span>`;
+        span.textContent = `${minutes} min`;
       }
       else {
-        durationDiv.innerHTML = `<span>${hours} h - ${minutes} min</span>`;
+        span.textContent = `${hours} h - ${minutes} min`;
       }
       if (map.getSource('route')) {
         map.getSource('route').setData({

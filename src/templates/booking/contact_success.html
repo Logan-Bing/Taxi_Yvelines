@@ -1,1 +1,61 @@
-<h1>Merci nous avons bien reçu votre message</h1>
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block content %}
+
+  <div class="background">
+    <div class="header-contact-success">
+      <img src="{% static "images/success.png" %}" alt="">
+      <h1>Merci pour votre réservation {{ first_name }} !</h1>
+      <p>Votre demande a bien été envoyée. Nous reviendrons <br>vers vous rapidement pour confirmer les détails de votre <br>trajet.</p>
+    </div>
+    <div class="infos-recap">
+      <div class="infos-header">
+        <span >Résumé de votre demande</span>
+      </div>
+      <div class="recap">
+        <div class="label-recap">
+          <span>Infos personnels</span>
+        </div>
+        <div class="recap-container">
+          <div class="recap-step">
+            <div>
+              <span><strong>Prénom:</strong> {{ first_name }}</span>
+            </div>
+            <div>
+              <span><strong>Nom:</strong> {{ surname }}</span>
+            </div>
+          </div>
+          <div class="recap-step-second">
+            <div>
+              <span><strong>Téléphone:</strong> {{ phone_number }}</span>
+            </div>
+            <div>
+              <span><strong>Email:</strong> {{ email }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="recap">
+        <div class="label-recap">
+          <span>Infos du trajet</span>
+        </div>
+        <div class="recap">
+          <div class="recap-step-trafic">
+            <span><strong>Adresse de départ:</strong> {{ start }}</span>
+            <span><strong>Adresse de d'arrivé:</strong> {{ end }}</span>
+          </div>
+          <div class="recap-step-trafic">
+            <span><strong>Jour de départ:</strong> {{ date }}</span>
+            <span><strong>Heure de départ:</strong> {{ hour }}</span>
+          </div>
+        </div>
+      </div>
+      <div class="request-container">
+        <span>Une question ?</span>
+        <span>Contactez-nous au <strong>0101001010</strong> ou par <strong>lugezlogan@gmail.com</strong></span>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

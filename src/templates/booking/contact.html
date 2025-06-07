@@ -18,7 +18,12 @@
   </div>
 
   <div class="main-contact">
-    <div id="map"></div>
+    <div class="map-container">
+      <div class="duration-container">
+        <p class="duration-infos">Durée de la course : <span class="duration"></span></p>
+      </div>
+      <div id="map"></div>
+    </div>
     <div class="main-form">
       <div class="header-form">
         <h3 class="subtitle">Informations Trajet</h3>
@@ -50,53 +55,64 @@
         </div>
       </div>
       <div class="form">
-        <form method="post" class="form-container">
+        <form method="post" class="form-container" id="regForm">
           {% csrf_token %}
           <div class="first-form form-step">
-            <div>
-              <input type="text" id="first_name" name="first_name" placeholder="Jhon" maxlength="100" required>
+            <div class="input-container">
+              <label for="first_name">Prénom</label>
+              <input type="text" id="first_name" name="first_name" placeholder="Jhon" required oninput="this.className = ''" >
             </div>
-            <div>
-              <input type="text" id="surname" name="surname" placeholder="Doe" maxlength="100" required>
+            <div class="input-container">
+              <label for="surname">Nom</label>
+              <input type="text" id="surname" name="surname" placeholder="Doe" oninput="this.className = ''">
             </div>
-            <div>
-              <input type="text" id="phone_number" name="phone_number" placeholder="0101010101" maxlength="10" required>
+            <div class="input-container">
+              <label for="phone_number">Téléphone</label>
+              <input type="text" id="phone_number" name="phone_number" placeholder="0101010101" maxlength="10" oninput="this.className = ''">
             </div>
-            <div>
-              <input type="email" id="email" name="email" placeholder="Your e-mail" required>
+            <div class="input-container">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="Jhondoe@gmail.com" oninput="this.className = ''">
             </div>
           </div>
           <div class="second-form form-step">
-            <div>
-              <input type="text" id="start" name="starting_address" placeholder="699 avenue aristide briand" autocomplete="street-address" required>
+            <div class="input-container">
+              <label for="start">Adresse de départ</label>
+              <input type="text" id="start" name="start" placeholder="699 avenue aristide briand" autocomplete="street-address" oninput="this.className = ''">
             </div>
-            <div>
-              <input type="text" id="end" name="arrival_address" placeholder="5 place de la liberté" autocomplete="street-address" required>
+            <div class="input-container">
+              <label for="end">Adresse d'arrivée</label>
+              <input type="text" id="end" name="end" placeholder="5 place de la liberté" autocomplete="street-address" oninput="this.className = ''">
             </div>
           </div>
           <div class="third-form form-step">
-            <div>
-              <input type="date" id="date" name="date" required>
+            <div class="input-container">
+              <label for="date">Date du trajet</label>
+              <input type="date" id="date" name="date" oninput="this.className = ''">
             </div>
-            <div>
-              <input type="time" id="hour" name="hour" placeholder="hh:mm" required>
+            <div class="input-container">
+              <label for="hour">Heure du trajet</label>
+              <input type="time" id="hour" name="hour" placeholder="hh:mm" oninput="this.className = ''">
             </div>
-            <div>
-              <textarea id="message" name="message" placeholder="Your message" rows="4"></textarea>
+            <div class="message-container input-container">
+              <label for="message">Informations suplémentaires</label>
+              <textarea id="message" name="message" placeholder="(facultatif)" rows="8" oninput="this.className = ''"></textarea>
             </div>
           </div>
 
-          <button class="next-button" onclick="nextStep()">Suivant</button>
-          <input class="submit-button" type="submit" value="Envoyer">
+          <div>
+            <button type="button" id="prevBtn" class="secondary-button" onclick="nextPrev(-1)">Retour</button>
+            <button type="button" id="nextBtn" class="primary-button" onclick="nextPrev(1)">Suivant</button>
+          </div>
+
         </form>
       </div>
     </div>
 
+
   </div>
 
-  <div class="duration-container"></div>
-
   <script src="{% static "js/mapconfig.js" %}"></script>
-  <script src="{% static "js/form_wizard.js" %}"></script>
+  <script src="{% static "js/form_wizard.js" %}?v=1"></script>
 
 {% endblock %}
