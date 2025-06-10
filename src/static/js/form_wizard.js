@@ -62,14 +62,9 @@ function validateForm(){
 
   if (valid) {
     const icons = document.getElementsByClassName("step-icon");
-    const lines = document.getElementsByClassName("line");
 
     if (currentStep < icons.length) {
       icons[currentStep].classList.add("finish");
-    }
-
-    if (currentStep < lines.length) {
-      lines[currentStep].classList.add("finish");
     }
   }
   return valid

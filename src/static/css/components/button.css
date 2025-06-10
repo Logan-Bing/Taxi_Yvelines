@@ -10,3 +10,8 @@ button{
     0px 14px 64px -4px rgba(24, 39, 75, 0.41);
   cursor: pointer;
 }
+
+.primary-button{
+  background-image: var(--gradient-primary);
+  color: var(--text-white);
+}

@@ -1,2 +1,9 @@
-@import "contact.css";
-@import "contact_success.css"
+@import "sections/contact.css";
+@import "sections/contact_success.css";
+@import "sections/hero.css";
+@import "sections/about.css";
+@import "sections/benefits.css";
+
+@import "components/navbar.css";
+@import "components/button.css";
+@import "components/config.css"

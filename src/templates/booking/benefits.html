@@ -1,0 +1,38 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="main-benefits">
+  <div class="benefits-content">
+    <h1>POURQUOI CHOISIR <span>TAXI</span> YVELINES</h1>
+    <div class="cards-container">
+      <div class="card">
+        <img class="card-img" src="{% static "images/ben_1.png" %}" alt="">
+        <span>Chauffeur <br>Professionnel</span>
+        <p>Formé, expérimenté et agréé, je vous accompagne avec sérieux et ponctualité, pour un trajet confortable en toute confiance.</p>
+      </div>
+      <div class="card">
+        <img class="card-img" src="{% static "images/ben_2.png" %}" alt="">
+        <span>Ponctualité<br>Garantie</span>
+        <p>À l’heure, à chaque course. Parce que votre tranquillité passe avant tout.</p>
+      </div>
+      <div class="card">
+        <img class="card-img" src="{% static "images/ben_3.png" %}" alt="">
+        <span>Confort<br>Inégalé</span>
+        <p>Je vous transporte dans un véhicule propre, climatisé et confortable, pour un trajet agréable en toute sécurité.</p>
+      </div>
+      <div class="card">
+        <img class="card-img" src="{% static "images/ben_4.png" %}" alt="">
+        <span>Trajet<br>Conventionné</span>
+        <p>Je suis agréé par la CPAM pour les transports médicaux assis pris en charge. Un service rassurant pour vos rendez-vous médicaux.</p>
+      </div>
+      <div class="card">
+        <img class="card-img" src="{% static "images/ben_5.png" %}" alt="">
+        <span>Réactivité <br>Hors-norme</span>
+        <p>Recevez une réponse claire, rapide et personnalisée à votre demande — en moins de 24 heures, c’est garanti.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock  %}

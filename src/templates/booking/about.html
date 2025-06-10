@@ -1,0 +1,36 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block content %}
+
+  <div class="main-about">
+    <div class="about-name">
+      <h2>YOUSSEF</h2>
+    </div>
+    <div class="about-content">
+      <div class="img-about">
+        <img src="{% static 'images/About_1.jpeg' %}" alt="">
+      </div>
+      <div class="about-text">
+        <div class="blue-block"></div>
+        <div>
+          <h2 class="about-title">Qui suis-je ?</h2>
+          <p>Je m’appelle [Prénom Nom], chauffeur de taxi professionnel<br>
+          basé dans les Yvelines.
+          <br>Fort de plusieurs années d’expérience dans le transport de
+          <br>personnes,je vous propose un service fiable, ponctuel et
+          <br>humain, adapté à tous vos besoins.
+          <br>Je suis agréé CPAM pour les transports médicaux assis pris
+          <br>en charge, mais j’assure aussi tous types de trajets :
+          <br>professionnels, personnels, courts ou longs.
+          <br>Ce qui fait ma différence ? Une vraie écoute du client,
+          <br>un véhicule propre et confortable, et une grande réactivité.
+          <br>Mon objectif est simple : vous offrir un trajet serein, sécurisé et agréable, à chaque course.</p>
+        </div>
+      </div>
+    </div>
+    <div class="white-background">
+    </div>
+  </div>
+
+{% endblock %}

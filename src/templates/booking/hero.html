@@ -1,1 +1,45 @@
-<h1>Hello from hero.html</h1>
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<section id="hero">
+  <div class="banner">
+    <div class="banner-content">
+      <h1 class="banner-title">VOTRE CHAUFFEUR DE<br>CONFIANCE DANS LES YVELINES</h1>
+      <p class="banner-text">Que ce soit pour un rendez-vous médical, un<br>déplacement personnel ou un trajet professionnel, je vous<br>accompagne avec sérieux, <span>ponctualité</span> et <span>bienveillance</span>.</p>
+      <button class="primary-button cta" >Réserver</button>
+    </div>
+    <div class="car-card">
+      <span>TESLA MODEL 3</span>
+      <div class="car-infos">
+        <div class="car-info">
+          <i class="fa-solid fa-car"></i>
+          <span>sensation unique et agréable.</span>
+        </div>
+        <div class="car-info">
+          <i class="fa-solid fa-couch"></i>
+          <span>sièges spacieux et silencieux.</span>
+        </div>
+        <div class="car-info">
+          <i class="fa-solid fa-volume-xmark"></i>
+          <span>trajet apaisant.</span>
+        </div>
+      </div>
+    </div>
+    <img class="car" src="{% static "images/banner_1.png" %}" alt="voiture">
+    <div class="certif-container">
+      <img src="{% static "images/cheeck.png" %}" alt="">
+      <span>Certification CPAM</span>
+    </div>
+    <div class="rails">
+      <div class="line line-1"></div>
+      <div class="mark"></div>
+      <div class="line line-2"></div>
+    </div>
+    <div class="scroll-button">
+      <img src="{% static "images/scroll.png" %}" alt="">
+    </div>
+  </div>
+</section>
+{% endblock %}

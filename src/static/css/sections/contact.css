@@ -1,5 +1,5 @@
 @import 'config.css';
-@import 'button.css';
+@import '.components/button.css';
 
 body{
   margin: 0;
@@ -17,11 +17,6 @@ input{
   height: 48px;
   padding: 5px;
   border: 1px solid var(--infos-color);
-}
-
-.primary-button{
-  background-image: var(--gradient-primary);
-  color: var(--text-white);
 }
 
 .secondary-button{
@@ -149,16 +144,6 @@ input{
   font-size: 12px;
 }
 
-.line{
-  width: 128px;
-  height: 2px;
-  background-color: var(--infos-color);
-}
-
-.line.finish{
-  background-image: var(--gradient-primary);
-}
-
 .map-container{
   width: 50%;
   display: flex;
@@ -229,7 +214,4 @@ input.invalid{
     height: 300px; /* facultatif : adapter la hauteur pour mobile */
   }
 
-  .line{
-    display: none;
-  }
 }

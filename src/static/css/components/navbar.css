@@ -1,0 +1,33 @@
+.navbar{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-family: var(--title-font);
+  text-decoration: none;
+  padding: 1rem;
+}
+
+.logo{
+  font-weight: bold;
+}
+
+.logo-blue{
+  color: var(--da-color);
+}
+
+.navbar ul {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav{
+  text-decoration: none;
+  color: var(--text-black);
+}
+
+#cta-nav{
+  font-weight: bold;
+  color: var(--cta-color);
+}
