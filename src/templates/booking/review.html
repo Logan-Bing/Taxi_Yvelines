@@ -1,0 +1,45 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="main-review">
+  <div class="content-review">
+    <div class="header-review">
+      <p>Mes passagers parlent pour moi</p>
+      <span class="back-text">Avis</span>
+      <h1>Avis</h1>
+    </div>
+    <div class="reviews-container">
+      <div class="review-card">
+        <div class="rewiew-card-header">
+          <img class="review-avatar" src="{% static "images/review.png" %}" alt="">
+          <p>— Julien T</p>
+        </div>
+        <div>
+          <p>“Ponctuel, courtois, et très professionnel. Le trajet a été agréable du début à la fin. Je referai appel à lui sans hésiter !“</p>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="rewiew-card-header">
+          <img class="review-avatar" src="{% static "images/review.png" %}" alt="">
+          <p>- Jhon D</p>
+        </div>
+        <div>
+          <p>“Un trajet en toute confiance. J’ai même pu discuter un peu pendant le voyage, ce qui m’a permis de me détendre. Je recommande vivement.”</p>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="rewiew-card-header">
+          <img class="review-avatar" src="{% static "images/review.png" %}" alt="">
+          <p>— Claire B</p>
+        </div>
+        <div>
+          <p>“Très bon contact dès la prise de réservation. Le chauffeur est arrivé à l’heure, avec le sourire. Service irréprochable.”</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock  %}

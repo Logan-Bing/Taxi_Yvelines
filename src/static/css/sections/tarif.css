@@ -1,0 +1,67 @@
+#tarif{
+  position: relative;
+  margin-bottom: 8rem;
+  min-height: 630px;
+}
+
+.image-container{
+  position: absolute;
+  z-index: 999;
+  left: 8%;
+}
+
+.image-container img {
+  width: 450px;
+}
+
+.tarif-header{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.tarif-header p {
+  color: var(--infos-color);
+}
+
+.tarif-box{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  background-color: var(--background-color);
+  color: var(--text-white);
+  font-family: var(--title-font);
+  border-radius: 24px;
+  padding: 3rem;
+}
+
+.tarif-content{
+  max-width: 650px;
+  margin-left: 32rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.tarif-list{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.tarif-argument{
+  background-color: #FFFFFF;
+  border-radius: 12px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-black);
+  font-weight: 500;
+}
+
+.tarif-argument i {
+  color: #009411;
+}

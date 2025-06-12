@@ -1,15 +1,22 @@
 <div class="navbar">
-  <div class="logo">
-    <span>Taxi</span> <span class="logo-blue">Yvelines</span>
-  </div>
-  <nav>
-    <ul>
-      <li><a class="nav" href="#">Blog</a></li>
-      <li><a class="nav" href="#">Tarif</a></li>
-      <li><a id="cta-nav" class="nav" href="#">Réserver</a></li>
-    </ul>
-  </nav>
+  <a href="/home">
+    <div class="logo">
+      <span>Taxi</span> <span class="logo-blue">Yvelines</span>
+    </div>
+  </a>
+  {% if request.path == "/" or request.path == "/home/" %}
+    <nav>
+      <ul>
+        <li><a class="nav" href="#about">A propos</a></li>
+        <li><a class="nav" href="#tarif">Tarif</a></li>
+        <li><a id="cta-nav" class="nav" href="#contact">Réserver</a></li>
+        <li><a class="nav" href="/blog">Blog</a></li>
+      </ul>
+    </nav>
+  {% endif %}
   <div class="phone-container">
-    <button class="secondary-button">+33 6 15 23 34 42</button>
+    <a href="tel:+33615233442">
+      <button class="secondary-button">+33 6 15 23 34 42</button>
+    </a>
   </div>
 </div>

@@ -1,0 +1,43 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<section id="tarif"class="tarif-section">
+  <div class="image-container">
+    <img src="{% static "images/tarif.png" %}" alt="Illustration Taxi" />
+  </div>
+  <div class="tarif-box">
+    <div class="tarif-content">
+      <div class="tarif-header">
+        <h2>Comment fonctionne la tarification ?</h2>
+        <p>
+          Les courses sont réalisées au <strong>compteur</strong> conformément à la réglementation en vigueur pour les taxis.
+        </p>
+      </div>
+      <div class="tarif-details">
+        <div class="tarif-list">
+          <div class="tarif-argument">
+            <i class="fa-solid fa-stopwatch"></i>
+            <p>Tarif calculé en fonction de la distance et du temps réel</p>
+          </div>
+          <div class="tarif-argument">
+            <i class="fa-solid fa-eye"></i>
+            <p>Aucun supplément caché : vous ne payez que ce que vous parcourez</p>
+          </div>
+          <div class="tarif-argument">
+            <i class="fa-solid fa-taxi"></i>
+            <p>Prise en charge : <strong>4,10</strong></p>
+          </div>
+          <div class="tarif-argument">
+            <i class="fa-solid fa-ruler"></i>
+            <p>Tarif calculé en fonction de la distance et du temps réel</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+{% endblock  %}

@@ -1,0 +1,50 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block content %}
+
+{% include "includes/navbar.html" %}
+
+<div class="main-article-detail">
+  <div class="article-content-detail">
+    <div class="header-article-detail">
+      <span class="pub_date">Publié le : {{ article.pub_date }}</span>
+      <h1>View de {{ article }}</h1>
+    </div>
+    <div class="content-article">
+      <p>{{ article.content|linebreaksbr }}</p>
+    </div>
+  </div>
+  <div class="suggested-articles">
+    {% if article.image %}
+      <img class="article-img" src="{{ article.image.url }}" alt="image-article">
+    {% else %}
+      <img class="article-img" src="{% static "images/default_article.png" %}" alt="image-article">
+    {% endif %}
+    <div class="suggested-articles-container">
+      <p class="header-suggested-articles">Les derniers posts</p>
+      {% for article in suggested_articles %}
+        <a href="{% url "article_detail" article.id %}">
+          <div class="article sugested">
+            {% if article.image %}
+              <img class="suggested-article-img" src="{{ article.image.url }}" alt="image-article">
+            {% else %}
+              <img class="suggested-article-img" src="{% static "images/default_article.png" %}" alt="image-article">
+            {% endif %}
+            <div class="article-infos">
+              <span class="pub_date">Publié le : {{ article.pub_date }}</span>
+              <p><strong>{{ article }}</strong></p>
+              <div class="article-detail">
+                <span>Lire le post</span>
+                <img src="{% static "images/Vector.png" %}" alt="">
+              </div>
+            </div>
+          </div>
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+
+{% endblock  %}

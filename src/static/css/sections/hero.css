@@ -1,5 +1,7 @@
-@import "config.css";
-@import "components/buttons.css";
+
+html {
+  scroll-behavior: smooth;
+}
 
 *{
   margin: 0;

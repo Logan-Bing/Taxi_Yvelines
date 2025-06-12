@@ -2,10 +2,6 @@ from django.conf import settings
 from django.shortcuts import render
 from django.core.mail import send_mail
 
-
-def test_benefits(request):
-     return render(request, "booking/benefits.html")
-
 def index(request):
     if request.method == "POST":
 

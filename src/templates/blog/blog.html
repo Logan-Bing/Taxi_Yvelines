@@ -1,0 +1,34 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block content %}
+{% include "includes/navbar.html" %}
+<div class="main-blog">
+  <div class="header-blog">
+    <h1>Quelques mots entre deux courses</h1>
+    <p>Conseils, actus et tranches de vie d’un chauffeur de confiance.</p>
+  </div>
+  <div class="articles-container">
+    {% for article in articles  %}
+      <a href="{% url "article_detail" article.id %}">
+        <div class="article">
+          {% if article.image %}
+            <img class="article-img" src="{{ article.image.url }}" alt="image-article">
+          {% else %}
+            <img class="article-img" src="{% static "images/default_article.png" %}" alt="image-article">
+          {% endif %}
+          <div class="article-infos">
+            <span class="pub_date">Publié le : {{ article.pub_date }}</span>
+            <p><strong>{{ article }}</strong></p>
+            <div class="article-detail">
+              <span>Lire le post</span>
+              <img src="{% static "images/Vector.png" %}" alt="">
+            </div>
+          </div>
+        </div>
+      </a>
+    {% endfor %}
+  </div>
+
+</div>
+{% endblock %}

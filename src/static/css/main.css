@@ -3,7 +3,12 @@
 @import "sections/hero.css";
 @import "sections/about.css";
 @import "sections/benefits.css";
+@import "sections/review.css";
+@import "sections/blog.css";
+@import "sections/article_detail.css";
+@import "sections/tarif.css";
 
 @import "components/navbar.css";
 @import "components/button.css";
-@import "components/config.css"
+@import "components/config.css";
+@import "components/footer.css"
