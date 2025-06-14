@@ -1,22 +1,39 @@
-<div class="navbar">
-  <a href="/home">
-    <div class="logo">
-      <span>Taxi</span> <span class="logo-blue">Yvelines</span>
-    </div>
-  </a>
-  {% if request.path == "/" or request.path == "/home/" %}
-    <nav>
-      <ul>
-        <li><a class="nav" href="#about">A propos</a></li>
-        <li><a class="nav" href="#tarif">Tarif</a></li>
-        <li><a id="cta-nav" class="nav" href="#contact">Réserver</a></li>
-        <li><a class="nav" href="/blog">Blog</a></li>
-      </ul>
-    </nav>
-  {% endif %}
-  <div class="phone-container">
-    <a href="tel:+33615233442">
-      <button class="secondary-button">+33 6 15 23 34 42</button>
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block content %}
+  <div class="navbar">
+    <a href="/home">
+      <div class="logo">
+        <span>Taxi</span> <span class="logo-blue">Yvelines</span>
+      </div>
     </a>
+    <div class="burger" id="burger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+      <nav class="nav" id="nav">
+        <ul>
+          {% if request.path == "/" or request.path == "/home/" %}
+            <li><a class="nav-link"  href="#about">A propos</a></li>
+            <li><a class="nav-link"  href="#tarif">Tarif</a></li>
+            <li><a class="nav-link" id="cta-nav"  href="#contact">Réserver</a></li>
+          {% else %}
+            <li><a class="nav-link" href="{% url 'home' %}#about">A propos</a></li>
+            <li><a class="nav-link" href="{% url 'home' %}#tarif">Tarif</a></li>
+            <li><a class="nav-link" id="cta-nav" href="{% url 'home' %}#contact">Réserver</a></li>
+          {% endif %}
+          <li><a class="nav-link" href="/blog">Blog</a></li>
+        </ul>
+      </nav>
+    <div class="phone-container">
+      <a href="tel:+33615233442">
+        <button class="secondary-button">+33 6 15 23 34 42</button>
+      </a>
+    </div>
   </div>
-</div>
+
+  <script src="{% static "js/burger.js" %}" defer ></script>
+
+{% endblock  %}
