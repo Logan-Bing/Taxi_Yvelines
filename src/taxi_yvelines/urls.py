@@ -7,7 +7,7 @@ urlpatterns = [
     path("blog/", include("blog.urls")),
     path("core/", include("core.urls")),
     path("", include("booking.urls")),
-    path('admin/', admin.site.urls),
+    path('supersecret-admin/', admin.site.urls),
 ]
 
 if settings.DEBUG:

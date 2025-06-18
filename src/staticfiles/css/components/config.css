@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root{
+  --da-color: #1C60FF;
+  --cta-color: #0D1EB8;
+  --background-color: #021338;
+  --infos-color: #9B9EB9;
+  --text-black: #3D3D3D;
+  --text-white: #FFFFFF;
+  --success-color: #009411;
+  --error-color: #FFA9A9;
+  --gradient-primary: linear-gradient(90deg, #1C60FF 0%, #0D1EB8 100%);
+
+  --title-font: 'Montserrat';
+  --title-size: 1.5rem;
+  --title-weight: 'semibold';
+
+  --subtitle-font: 'Montserrat';
+  --subtitle-size: 1.2rem;
+  --subtitle-weight: 'semibold';
+
+  --content-font: 'Instrument Sans';
+  --content-size: 1rem;
+  --content-weight: 'regular';
+
+  --infos-font: 'Instrument Sans';
+  --infos-size: 1rem;
+  --infos-weight: 'light';
+
+  --shadow-primary: 0px 8px 22px -6px rgba(24, 39, 75, 0.72),
+                    0px 14px 64px -4px rgba(24, 39, 75, 0.41);
+}

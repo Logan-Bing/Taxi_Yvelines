@@ -58,7 +58,7 @@ def index(request):
                  "messagge" : message
             })
 
-    return render(request, "core/index.html")
+    return render(request, "core/index.html", { "mapbox_api_key": settings.MAPBOX_API_KEY })
 
 def get_success(request):
     return render(request, "booking/contact_success.html")

@@ -1,15 +1,4 @@
-{% extends "core/base.html" %}
 {% load static %}
-
-
-{% block head %}
-  <link href="https://api.mapbox.com/mapbox-gl-js/v3.12.0/mapbox-gl.css" rel="stylesheet" />
-
-  <script src="https://api.mapbox.com/mapbox-gl-js/v3.12.0/mapbox-gl.js"></script>
-  <script id="search-js" defer src="https://api.mapbox.com/search-js/v1.0.0/web.js"></script>
-{% endblock %}
-
-{% block content %}
 
 <section id="contact">
   <div class="header-contact">
@@ -109,8 +98,3 @@
     </div>
   </div>
 </section>
-
-  <script src="{% static "js/mapconfig.js" %}"></script>
-  <script src="{% static "js/form_wizard.js" %}?v=1"></script>
-
-{% endblock %}
