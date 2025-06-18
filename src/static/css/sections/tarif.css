@@ -86,7 +86,7 @@
     position: relative;
     transform: none;
     left: 0%;
-    width: 100%;
+    width: auto;
   }
 
   .tarif-content{
