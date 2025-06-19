@@ -204,7 +204,7 @@ input.invalid{
 
   .main-form,
   .map-container {
-    width: 100%;
+    width: auto;
   }
 
   #map {

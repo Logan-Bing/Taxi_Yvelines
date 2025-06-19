@@ -83,6 +83,7 @@
     display: block;
     text-align: center;
     font-size: 1.5rem;
+    width: 90%;
   }
 
   .nav.active {
