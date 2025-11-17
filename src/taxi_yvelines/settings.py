@@ -43,9 +43,9 @@ ANYMAIL = {
     "BREVO_API_KEY": config("API_KEY"),
 }
 EMAIL_BACKEND = "anymail.backends.brevo.EmailBackend"
-SERVER_EMAIL = "loganlugez8@gmail.com"
-DEFAULT_FROM_EMAIL = "loganlugez8@gmail.com"
-NOTIFY_EMAIL = "loganlugez8@gmail.com"
+SERVER_EMAIL = "taxiyvelines78000@gmail.com"
+DEFAULT_FROM_EMAIL = "taxiyvelines78000@gmail.com"
+NOTIFY_EMAIL = "taxiyvelines78000@gmail.com"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
