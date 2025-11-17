@@ -2,6 +2,7 @@ from django.conf import settings
 from django.shortcuts import render
 from django.core.mail import send_mail
 import logging
+
 logger = logging.getLogger(__name__)
 
 def index(request):
@@ -14,54 +15,65 @@ def index(request):
             end = request.POST.get("end") or request.POST.get("end address-search")
             date = request.POST.get("date")
             hour = request.POST.get("hour")
-            subject = "Vous avez reçu une nouvelle demande de course via le formulaire du site. Voici les détails du client :"
             email = request.POST.get("email")
             message = request.POST.get("message")
 
-            full_meesage = f"""
-                {subject}
+            subject = (
+                "Vous avez reçu une nouvelle demande de course via le formulaire du site. "
+                "Voici les détails du client :"
+            )
 
-                👤 Nom : {first_name} {surname}
-                📞 Téléphone : {phone_number}
-                📧 Email : {email}
+            full_message = f"""
+{subject}
 
-                📍 Adresse de départ : {start}
-                📍 Adresse d’arrivée : {end}
+👤 Nom : {first_name} {surname}
+📞 Téléphone : {phone_number}
+📧 Email : {email}
 
-                📅 Date : {date}
-                🕒 Heure : {hour}
+📍 Adresse de départ : {start}
+📍 Adresse d’arrivée : {end}
 
-                💬 Message du client :
-                {message}
+📅 Date : {date}
+🕒 Heure : {hour}
 
-                Merci de prendre contact avec le client dès que possible pour confirmer la course.
+💬 Message du client :
+{message}
 
-                —
-                Ceci est un message automatique envoyé depuis votre site internet.
-                """
+Merci de prendre contact avec le client dès que possible pour confirmer la course.
+
+—
+Ceci est un message automatique envoyé depuis votre site internet.
+"""
 
             send_mail(
                 subject="Nouvelle Réservation",
-                message=full_meesage,
+                message=full_message,
                 from_email=settings.DEFAULT_FROM_EMAIL,
-                recipient_list=[settings.NOTIFY_EMAIL]
+                recipient_list=[settings.NOTIFY_EMAIL],
+                fail_silently=False,  # explicite, par défaut c'est False
             )
 
             return render(request, "booking/contact_success.html", {
-                 "first_name": first_name,
-                 "surname": surname,
-                 "phone_number": phone_number,
-                 "start": start,
-                 "end": end,
-                 "date": date,
-                 "hour": hour,
-                 "email": email,
-                 "messagge" : message
+                "first_name": first_name,
+                "surname": surname,
+                "phone_number": phone_number,
+                "start": start,
+                "end": end,
+                "date": date,
+                "hour": hour,
+                "email": email,
+                "message": message,   # tu avais "messagge"
             })
-        except Exception as e:
-            logger.execpion("Erreur lors du traitement du formulaire")
+
+        except Exception:
+            logger.exception("Erreur lors du traitement du formulaire")
+            return render(request, "core/index.html", {
+                "mapbox_api_key": settings.MAPBOX_API_KEY,
+                "form_error": "Une erreur est survenue lors de l'envoi du formulaire. Veuillez réessayer."
+            })
 
     return render(request, "core/index.html", { "mapbox_api_key": settings.MAPBOX_API_KEY })
+
 
 def get_success(request):
     return render(request, "booking/contact_success.html")
