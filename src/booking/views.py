@@ -1,10 +1,12 @@
 from django.conf import settings
 from django.shortcuts import render
 from django.core.mail import send_mail
+import logging
+logger = logging.getLogger(__name__)
 
 def index(request):
     if request.method == "POST":
-
+        try:
             first_name = request.POST.get("first_name")
             surname = request.POST.get("surname")
             phone_number = request.POST.get("phone_number")
@@ -15,7 +17,6 @@ def index(request):
             subject = "Vous avez reçu une nouvelle demande de course via le formulaire du site. Voici les détails du client :"
             email = request.POST.get("email")
             message = request.POST.get("message")
-            print(request.POST)
 
             full_meesage = f"""
                 {subject}
@@ -57,6 +58,8 @@ def index(request):
                  "email": email,
                  "messagge" : message
             })
+        except Exception as e:
+            logger.execpion("Erreur lors du traitement du formulaire")
 
     return render(request, "core/index.html", { "mapbox_api_key": settings.MAPBOX_API_KEY })
 
