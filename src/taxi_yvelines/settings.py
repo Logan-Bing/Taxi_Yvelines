@@ -17,7 +17,7 @@ SECRET_KEY = config("SECRET_KEY")
 MAPBOX_API_KEY = config("API_MAPBOX")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True 
+DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
 
