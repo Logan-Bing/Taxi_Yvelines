@@ -14,5 +14,5 @@
 @import "components/footer.css";
 
 *{
-    background-color: red;
+    background-color: red !important;
 }
