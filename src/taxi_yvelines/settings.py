@@ -17,7 +17,7 @@ SECRET_KEY = config("SECRET_KEY")
 MAPBOX_API_KEY = config("API_MAPBOX")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True 
+DEBUG = False 
 
 ALLOWED_HOSTS = ["*"]
 
@@ -49,7 +49,7 @@ NOTIFY_EMAIL = "taxiyvelines78000@gmail.com"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    # 'whitenoise.middleware.WhiteNoiseMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
