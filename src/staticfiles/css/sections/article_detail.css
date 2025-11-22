@@ -79,4 +79,8 @@
   .main-article-detail{
     flex-direction: column;
   }
+
+  .suggested-article-img{
+    width: 100%;
+  }
 }

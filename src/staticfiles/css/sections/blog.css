@@ -63,7 +63,9 @@
 
 .article-img{
   width: 300px;
-  max-height: 250px;
+  max-height: 280px;
+  object-fit: cover;
+  object-position: center;
 }
 
 @media (max-width: 768px){

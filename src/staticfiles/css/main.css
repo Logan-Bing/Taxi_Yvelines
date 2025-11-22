@@ -11,4 +11,8 @@
 @import "components/navbar.css";
 @import "components/button.css";
 @import "components/config.css";
-@import "components/footer.css"
+@import "components/footer.css";
+
+*{
+    background-color: red;
+}
